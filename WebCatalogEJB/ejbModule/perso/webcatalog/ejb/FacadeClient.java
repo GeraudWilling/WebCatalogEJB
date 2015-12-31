@@ -30,11 +30,13 @@ public class FacadeClient extends FacadeAbstraite<Client> implements FacadeClien
 			Client alwaysexist= (Client)query.getSingleResult();
 			if(alwaysexist== null)
 				return false;
+			else
+				return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-		return true;
+		//return true;
 	}
 
 	@Override
