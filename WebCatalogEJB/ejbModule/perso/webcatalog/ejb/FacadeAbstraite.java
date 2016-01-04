@@ -25,7 +25,8 @@ public abstract class FacadeAbstraite<T> {
 	
 	public T create(T entity){
 		try {
-			getEntityManager().persist(entity);
+			entity=getEntityManager().merge(entity);
+			//getEntityManager().flush();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

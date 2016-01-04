@@ -2,6 +2,7 @@ package perso.webcatalog.bean;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class ProduitCommande implements Serializable {
 	
 	private int quantite;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
     //@PrimaryKeyJoinColumn(name = "COMMANDEID", referencedColumnName = "ID")
 	private CommandeClient commandeClient;
 	
